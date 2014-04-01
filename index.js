@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var gm = require('gm').subClass({ imageMagick: true });
 var app = express();
 app.use(express.bodyParser());
 
@@ -8,15 +9,18 @@ if(process.env.USERNAME && process.env.PASSWORD)
 
 app.post('/', function(req, res){
 
-  res.send('COFFEE!!!\n');
-
-  fs.readFile(req.files.file.path, function (err, data) {
+  if(req.files.file.path){
     var newPath = __dirname + "/public/recent.jpg";
-    fs.writeFile(newPath, data, function (err) {
-      if(err) console.err(err);
+
+    gm(req.files.file.path)
+    .autoOrient()
+    .resize(640, 640)
+    .write(newPath, function (err) {
+      if(err) console.log(err);
       console.log("written!")
-    });
-  });
+      res.send(err ? 'some kind of ERROR HAPPENED\n' : 'COFFEE!!!\n');
+    })
+  }
 })
 
 // serve all files in this directory
