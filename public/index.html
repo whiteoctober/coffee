@@ -30,11 +30,11 @@
       }
     </style>
     <script type="text/javascript">
-      var host = location.origin.replace(/^http/, 'ws')
-      var ws = new WebSocket(host);
-      ws.onmessage = function (event) {
-        document.body.style.backgroundImage = 'url(recent.jpg?'+event.data+')'
-      };
+      // var host = location.origin.replace(/^http/, 'ws')
+      // var ws = new WebSocket(host);
+      // ws.onmessage = function (event) {
+      //   document.body.style.backgroundImage = 'url(recent.jpg?'+event.data+')'
+      // };
     </script>
   </head>
   <body>
@@ -46,5 +46,12 @@
     </div>
     <!--button type="button" onclick="alert('Hello world!')">Log in with Twitter</button>
     <button type="button" onclick="alert('Hello world!')">I made coffee!</button-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io.connect(location.origin);
+      socket.on('image', function (data) {
+        document.body.style.backgroundImage = 'url(recent.jpg?'+data+')'
+      });
+    </script>
   </body>
 </html>

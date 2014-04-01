@@ -11,6 +11,7 @@ var server = http.createServer(app);
 server.listen(process.env.PORT || 3000)
 
 var wss = new WebSocketServer({server: server});
+var io = require('socket.io').listen(server, {transports: ['xhr-polling'], "polling duration": 10,'log level': 2})
 
 app.use(express.bodyParser());
 
@@ -46,6 +47,8 @@ app.post('/', function(req, res){
           // publish that we got a new image
           for(var i in wss.clients)
             wss.clients[i].send("?"+(+new Date));
+
+          io.sockets.emit('image', "?"+(+new Date))
 
         });
       });
