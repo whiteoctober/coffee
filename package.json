@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/whiteoctober/coffee/issues"
   },
-  "homepage": "https://github.com/whiteoctober/coffee"
+  "homepage": "https://github.com/whiteoctober/coffee",
+  "dependencies": {
+    "express": "~3.5.1"
+  }
 }
