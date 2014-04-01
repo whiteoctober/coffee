@@ -1,69 +1,42 @@
 <!DOCTYPE html>
-
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>WO Coffee</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
     <style>
       h1 {
-        padding-top: 20px;
-        padding-left: 20px;
-        vertical-align: top;
-        display: inline;
         font-family: 'Bree Serif', serif;
         color:#0084af;
-        font-size: 50px;
       }
-      h2 {
-        padding-top: 20px;
-        vertical-align: top;
-        display: inline;
-        font-family: 'Bree Serif', serif;
-        color:#5e5e5e;
-        font-size: 20px;
+      .coffee-cup{
+        max-height: 7em;
+        margin:1em;
       }
-      button {
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color:#0084af;
-        color: white;
-        font-size: 1em;
-        }
-      .homepage 
-        img {
-          margin-top: 20px;
-          display:inline;
-          max-width: 50px;
-        }
-      .homepage button {
-        padding: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color:red;
-        color: white;
-        font-size: 1em;
-        }
-      .photo_display
-        img {
-          display:block;
-          width: 600px;
-        }
     </style>
   </head>
   <body>
-    <div class="homepage">
-      <img src="images/wo_coffee_cup-01.svg" alt="this_was_suppossed_to_be_a_coffee_cup">
-      <h1>WO Coffee</h1>
-      <button type="button" onclick="alert('Hello world!')">Log in with Twitter</button>
-	</div>
-     
-     <button type="button" onclick="alert('Hello world!')">I made coffee!</button>
-
-   
-    <div class="photo_display">
-      <h2>Coffee cam</h2>
-      <img src="recent.jpg" />
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3 col-sm-2">
+          <img src="images/wo_coffee_cup-01.svg" alt="Coffee Cup!" class="coffee-cup">
+        </div>
+        <div class="col-xs-9 col-sm-8">
+          <h1>WO CoffeeCam</h1>
+        </div>
+      </div>
+      <div><hr /></div>
+      <div class="row">
+        <img src="recent.jpg" class="col-xs-12"/>
+      </div>
     </div>
+    <!--button type="button" onclick="alert('Hello world!')">Log in with Twitter</button>
+    <button type="button" onclick="alert('Hello world!')">I made coffee!</button-->
   </body>
 </html>
