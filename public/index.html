@@ -29,6 +29,13 @@
         background-position: center center
       }
     </style>
+    <script type="text/javascript">
+      var host = location.origin.replace(/^http/, 'ws')
+      var ws = new WebSocket(host);
+      ws.onmessage = function (event) {
+        document.body.style.backgroundImage = 'url(recent.jpg?'+event.data+')'
+      };
+    </script>
   </head>
   <body>
     <div class="container">
