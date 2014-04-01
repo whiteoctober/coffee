@@ -21,21 +21,8 @@
         display: inline;
         width: 2em;
       }
-      body{
-        background-image: url(recent.jpg);
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center
-      }
+      img{width:100%;}
     </style>
-    <script type="text/javascript">
-      // var host = location.origin.replace(/^http/, 'ws')
-      // var ws = new WebSocket(host);
-      // ws.onmessage = function (event) {
-      //   document.body.style.backgroundImage = 'url(recent.jpg?'+event.data+')'
-      // };
-    </script>
   </head>
   <body>
     <div class="container">
@@ -43,6 +30,7 @@
         <img src="images/wo_coffee_cup-01.svg" alt="Coffee Cup!" class="coffee-cup" />
         Coffee
       </h1>
+      <img id="i" src="recent.jpg" /> 
     </div>
     <!--button type="button" onclick="alert('Hello world!')">Log in with Twitter</button>
     <button type="button" onclick="alert('Hello world!')">I made coffee!</button-->
@@ -50,8 +38,15 @@
     <script>
       var socket = io.connect(location.origin);
       socket.on('image', function (data) {
-        document.body.style.backgroundImage = 'url(recent.jpg?'+data+')'
+        i.src = 'recent.jpg?'+data;
       });
+
+      // would be nicer to use this - though heroku post problems happen
+      // var host = location.origin.replace(/^http/, 'ws')
+      // var ws = new WebSocket(host);
+      // ws.onmessage = function (event) {
+      //   document.body.style.backgroundImage = 'url(recent.jpg?'+event.data+')'
+      // };
     </script>
   </body>
 </html>
