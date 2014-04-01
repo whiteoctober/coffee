@@ -1,9 +1,68 @@
+<!DOCTYPE html>
+
 <html>
-<head>
-  <title></title>
-</head>
-<body>
-<h1>COFFEE?!</h1>
-<img src="recent.jpg" />
-</body>
+  <head>
+    <title>WO Coffee</title>
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <style>
+      h1 {
+        padding-top: 20px;
+        padding-left: 20px;
+        vertical-align: top;
+        display: inline;
+        font-family: 'Bree Serif', serif;
+        color:#0084af;
+        font-size: 50px;
+      }
+      h2 {
+        padding-top: 20px;
+        vertical-align: top;
+        display: inline;
+        font-family: 'Bree Serif', serif;
+        color:#5e5e5e;
+        font-size: 20px;
+      }
+      button {
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:#0084af;
+        color: white;
+        font-size: 1em;
+        }
+      .homepage 
+        img {
+          margin-top: 20px;
+          display:inline;
+          max-width: 50px;
+        }
+      .homepage button {
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color:red;
+        color: white;
+        font-size: 1em;
+        }
+      .photo_display
+        img {
+          display:block;
+          width: 600px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="homepage">
+      <img src="images/wo_coffee_cup-01.svg" alt="this_was_suppossed_to_be_a_coffee_cup">
+      <h1>WO Coffee</h1>
+      <button type="button" onclick="alert('Hello world!')">I made coffee!</button>
+    </div>
+
+    <button type="button" onclick="alert('Hello world!')">Log in with Twitter</button>
+    
+    <div class="photo_display">
+      <h2>Coffee cam</h2>
+      <img src="recent.jpg" />
+    </div>
+  </body>
 </html>
