@@ -25,7 +25,7 @@ app.get('/recent.jpg', function(req, res){
 if(process.env.USERNAME && process.env.PASSWORD)
   app.post('/',express.basicAuth(process.env.USERNAME, process.env.PASSWORD))
 
-app.post('/', function(req, res){
+app.post('/coffee', function(req, res){
 
   if(req.files.file.path){
     var newPath = __dirname + "/public/recent.jpg";
